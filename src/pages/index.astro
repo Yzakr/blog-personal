@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Notas y reflexiones de Rolando Valenzuela sobre tecnología, ciberseguridad y aprendizaje profesional." />
+		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+		<title>Rolando Valenzuela — Blog</title>
+	</head>
+	<body>
+		<header class="site-header shell">
+			<a class="brand" href={base}>RV<span>.</span></a>
+			<p>Notas sobre tecnología y aprendizaje</p>
+		</header>
+
+		<main class="shell home">
+			<section class="intro" aria-labelledby="page-title">
+				<p class="eyebrow">Cuaderno personal</p>
+				<h1 id="page-title">Aprender,<br />poner a prueba,<br /><em>compartir.</em></h1>
+				<p class="lede">Este espacio reúne ideas breves sobre ciberseguridad, sistemas y las preguntas que aparecen cuando la teoría se encuentra con el trabajo real.</p>
+			</section>
+
+			<section class="posts" aria-labelledby="posts-title">
+				<div class="section-heading">
+					<h2 id="posts-title">Entradas</h2>
+					<span>01</span>
+				</div>
+				<a class="post-card" href={`${base}blog/hola-mundo/`}>
+					<div>
+						<p class="post-meta"><time datetime="2026-09-20">20 sep 2026</time> · 4 min</p>
+						<h3>Hola, mundo</h3>
+						<p>Una presentación breve: de dónde vengo, qué me interesa y por qué decidí estudiar la MCY.</p>
+					</div>
+					<span class="arrow" aria-hidden="true">↗</span>
+				</a>
+			</section>
+		</main>
+
+		<footer class="site-footer shell">
+			<p>© 2026 Rolando Valenzuela</p>
+			<p>Hermosillo, Sonora</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+---
+import '../../styles/global.css';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Presentación personal de Rolando Valenzuela y el inicio de su camino en la MCY del Tecnológico de Monterrey." />
+		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+		<title>Hola, mundo — Rolando Valenzuela</title>
+	</head>
+	<body>
+		<header class="site-header shell">
+			<a class="brand" href={base}>RV<span>.</span></a>
+			<a class="back-link" href={base}>← Todas las entradas</a>
+		</header>
+
+		<main class="article-shell">
+			<article>
+				<header class="article-header">
+					<p class="eyebrow">Blog #0 · Presentación</p>
+					<h1>Hola,<br /><em>mundo.</em></h1>
+					<div class="article-byline">
+						<span>Rolando Valenzuela</span>
+						<time datetime="2026-09-20">20 de septiembre de 2026</time>
+					</div>
+				</header>
+
+				<div class="article-body">
+					<p class="dropcap">Siempre me ha interesado entender cómo funcionan las cosas, especialmente cuando hay tecnología de por medio. Con el tiempo, esa curiosidad dejó de ser solamente técnica: también empecé a preguntarme cómo diseñar sistemas más confiables, cómo reducir riesgos y cómo tomar mejores decisiones cuando no existe una respuesta perfecta.</p>
+
+					<p>Mi trayectoria académica y profesional se ha construido alrededor de la tecnología, el software, la infraestructura y la resolución de problemas. Me gusta moverme entre lo práctico y lo estratégico: revisar un detalle hasta encontrar la causa de una falla, pero también entender qué impacto tiene ese detalle en una organización y en las personas que dependen de ella.</p>
+
+					<blockquote>“Para mí, aprender tecnología no consiste en memorizar herramientas, sino en desarrollar criterio.”</blockquote>
+
+					<h2>Lo que quiero explorar</h2>
+
+					<p>Entre los temas que más me interesan están la ciberseguridad, la automatización, las redes y la manera en que una buena arquitectura puede prevenir problemas antes de que aparezcan. También me interesa la parte humana de la seguridad: los procesos, los hábitos y las decisiones cotidianas que pueden fortalecer o debilitar cualquier solución técnica.</p>
+
+					<p>Decidí estudiar la MCY en el Tecnológico de Monterrey porque quiero darle mayor estructura a esa experiencia y ampliar mi perspectiva. Busco conectar lo que ya he aprendido en la práctica con fundamentos más sólidos, nuevas formas de analizar riesgos y conversaciones con personas que enfrentan retos distintos a los míos. No espero encontrar recetas; espero formular mejores preguntas y contar con más herramientas para responderlas.</p>
+
+					<h2>Por qué escribirlo</h2>
+
+					<p>Este blog será una forma de detenerme a pensar. En el trabajo es fácil pasar de un problema al siguiente sin registrar qué cambió en nuestra manera de entenderlos. Escribir me obliga a ordenar las ideas, distinguir lo que realmente aprendí de lo que solo ejecuté y dejar una referencia a la que pueda volver después.</p>
+
+					<p>Esta primera entrada es, en ese sentido, un punto de partida. Quiero usar las siguientes publicaciones para relacionar lo visto en clase con situaciones reales, reconocer errores y documentar cómo evoluciona mi criterio profesional. Si al final de la maestría puedo mirar atrás y encontrar preguntas más precisas, decisiones mejor fundamentadas y una visión más completa de la ciberseguridad, este espacio habrá cumplido su propósito.</p>
+
+					<div class="article-end" aria-hidden="true"><span></span><span></span><span></span></div>
+				</div>
+			</article>
+		</main>
+
+		<footer class="site-footer shell">
+			<p>© 2026 Rolando Valenzuela</p>
+			<a href={base}>Volver al inicio ↑</a>
+		</footer>
+	</body>
+</html>
