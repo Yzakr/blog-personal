@@ -1,0 +1,123 @@
+---
+import '../../styles/global.css';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Reflexión del Módulo 1: lecturas de Hobbs, Boerger, Calder y Watkins, la práctica con Snipe-IT y un proyecto para relacionar activos y riesgo." />
+		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+		<link rel="canonical" href="https://yzakr.github.io/blog-personal/blog/gestion-activos-riesgo/" />
+		<title>Saber qué tenemos, entender qué arriesgamos — Rolando Valenzuela</title>
+	</head>
+	<body>
+		<header class="site-header shell">
+			<a class="brand" href={base}>RV<span>.</span></a>
+			<a class="back-link" href={base}>← Todas las entradas</a>
+		</header>
+
+		<main class="article-shell">
+			<article>
+				<header class="article-header">
+					<p class="eyebrow">Blog #1 · Fundamentos de Gestión de Activos y su Relación con el Riesgo</p>
+					<h1>Saber qué tenemos,<br /><em>entender qué arriesgamos.</em></h1>
+					<div class="article-byline">
+						<span>Rolando Valenzuela</span>
+						<time datetime="2026-10-18">18 de octubre de 2026</time>
+					</div>
+				</header>
+
+				<div class="article-body">
+					<p class="dropcap">En infraestructura estamos acostumbrados a preguntar si un servicio está disponible, cuánto tarda en responder o qué cambió antes de una falla. El Módulo 1 me hizo detenerme en preguntas anteriores: ¿sabemos realmente qué sostiene ese servicio?, ¿quién responde por cada componente?, ¿qué perderíamos si dejara de funcionar? Mi experiencia en desarrollo, DevOps y SRE me ayuda a reconocer esos problemas; las actividades del módulo me dieron una forma más ordenada de relacionarlos con la gestión de activos y el riesgo.</p>
+
+					<p>Al relacionar las lecturas de Hobbs, Boerger, Calder y Watkins con la práctica de Snipe-IT y el proyecto en equipo sobre Vanguard Health Technologies, encuentro un hilo común: la calidad de una decisión de seguridad depende de la calidad del contexto que tenemos. Un inventario incompleto o una dependencia desconocida pueden hacer que una acción técnicamente correcta termine atendiendo el problema equivocado.</p>
+
+					<h2>La operación empieza antes del incidente</h2>
+
+					<p>Hobbs abre <a href="https://www.oreilly.com/library/view/it-asset-management/9781849282949/xhtml/chapter01.html"><cite>IT Asset Management: A Pocket Survival Guide</cite></a> con preguntas sobre visibilidad y fallas recurrentes. Su planteamiento del caos operativo me resulta cercano: si faltan información, estructura y control, resolver una falla deja pendiente el problema que permite que vuelva a ocurrir. Lo conecto con SRE porque una buena respuesta a incidentes depende también de conocer los componentes y los cambios del entorno.</p>
+
+					<p>En el <a href="https://www.oreilly.com/library/view/it-asset-management/9781849282949/xhtml/chapter02.html">capítulo 2</a>, las preguntas sobre alcance e impacto del proyecto me llevan a una decisión práctica: empezar por un servicio definido y comprobar la utilidad del inventario antes de extenderlo. El <a href="https://www.oreilly.com/library/view/it-asset-management/9781849282949/xhtml/chapter08.html">capítulo 8</a> insiste en sostener el esfuerzo hasta alcanzar los objetivos. Para mí, eso implica reservar tiempo para mantener los datos cuando las urgencias diarias compitan por la atención del equipo.</p>
+
+					<p>Boerger aporta otro ángulo. En el <a href="https://www.oreilly.com/library/view/rethinking-information-technology/9781637420157/text/chapter02.xhtml">capítulo 2 de <cite>Rethinking Information Technology Asset Management</cite></a> describe la distancia entre conocer las necesidades tecnológicas del negocio y tener una idea precisa de cómo mejorar ITAM. Me deja una pregunta incómoda: cuando digo que necesitamos un mejor inventario, ¿puedo explicar qué información falta y qué decisión cambiaría al obtenerla? Esa pregunta me parece más útil que empezar eligiendo una plataforma.</p>
+
+					<h2>Un registro necesita un responsable</h2>
+
+					<p>En la demostración pública de Snipe-IT registré tres activos ficticios: un servidor, una laptop y una tableta. Asigné la laptop a un usuario de prueba, cambié la tableta a reparación y filtré los equipos disponibles. El ejercicio parecía sencillo, pero cada acción respondía una pregunta distinta: qué existe, quién lo tiene y si puede utilizarse.</p>
+
+					<p>La dificultad más reveladora fue registrar el servidor con una categoría que no representaba bien su tipo, porque la demo no ofrecía la opción adecuada. Pude identificarlo mediante el nombre, aunque esa solución deja un problema de calidad de datos. Si cada persona resuelve así las excepciones, un inventario grande termina siendo difícil de comparar y mantener. Entendí mejor por qué los catálogos, los estados y las reglas de actualización también forman parte del control.</p>
+
+					<p>Además, el total del inventario cambió de 2,561 a 2,567 mientras yo había creado tres registros. Como la instancia era compartida, no podía atribuirme toda la diferencia. Tuve que buscar mis identificadores y revisar las fichas. Ese detalle me dejó una lección útil para auditorías y para la operación diaria: un indicador orienta la investigación, pero necesita evidencia que explique qué ocurrió.</p>
+
+					<p>Lo relaciono con el <a href="https://www.oreilly.com/library/view/rethinking-information-technology/9781637420157/text/chapter03.xhtml">capítulo 3 de Boerger</a>, que inicia Pragmatic ITAM con el descubrimiento y la alineación de sus fuentes. En la práctica, mis etiquetas permitían verificar las altas; el conteo global respondía a una fuente compartida con otros cambios. En una organización contrastaría descubrimiento técnico, registros de compra y custodia, investigando las diferencias. Automatizar la recopilación sin resolver esas discrepancias puede hacer más rápido un reporte que todavía no es confiable.</p>
+
+					<p>El <a href="https://www.cisecurity.org/controls/inventory-and-control-of-enterprise-assets">CIS Control 1</a> plantea administrar y seguir los activos que deben protegerse. La <a href="https://snipe-it.readme.io/docs/managing-assets">documentación de Snipe-IT</a> también destaca la responsabilidad de una persona sobre el equipo. Después de la práctica, esos principios adquirieron un sentido concreto: una laptop asignada en pantalla sigue requiriendo un proceso que registre su entrega, sus movimientos y su devolución. La herramienta conserva lo que declaramos; mantenerlo alineado con la realidad es una tarea continua.</p>
+
+					<blockquote>El dato que más me interesa ya no es cuántos activos aparecen, sino qué decisión puedo sostener con esa información.</blockquote>
+
+					<h2>Del equipo al servicio que depende de él</h2>
+
+					<p>En el proyecto en equipo propusimos un programa de gestión de activos y configuraciones para Vanguard Health Technologies, una empresa ficticia de telemedicina. El escenario nos obligó a ampliar la mirada hacia aplicaciones, bases de datos, identidades de servicio, respaldos y dispositivos conectados. También distinguimos el ciclo de vida del activo, la información de configuración y el proceso para autorizar cambios.</p>
+
+					<p>La parte más importante para mí fue relacionar componentes con servicios. Saber que existe una base de datos aporta visibilidad; conocer qué aplicación depende de ella permite anticipar el impacto de un cambio. En el caso de telemedicina, una interrupción puede impedir una consulta, y una alteración de información puede afectar decisiones clínicas. La criticidad necesita considerar confidencialidad, integridad y disponibilidad dentro del proceso que se busca proteger.</p>
+
+					<p>El <a href="https://www.oreilly.com/library/view/risk-assessment-for/9781849281232/Text/ch011.xhtml">capítulo 6 de Calder y Watkins</a> conecta la identificación de activos con la definición del alcance y de sus propietarios. El <a href="https://www.oreilly.com/library/view/risk-assessment-for/9781849281232/Text/ch013.xhtml">capítulo 8</a> relaciona la valoración con las consecuencias para el negocio de afectar confidencialidad, integridad o disponibilidad. Esa perspectiva me ayuda a cuestionar una clasificación basada únicamente en el precio del equipo: el impacto depende de su función y de la información que sostiene.</p>
+
+					<p>Al trabajar la matriz de VHT, la relación entre probabilidad e impacto del <a href="https://www.oreilly.com/library/view/risk-assessment-for/9781849281232/Text/ch014.xhtml">capítulo 9</a> adquiere sentido operativo. Nuestra escala era una adaptación para el caso y sus valoraciones iniciales necesitarían validarse. Asignar un número facilita conversar sobre prioridades, aunque puede producir una falsa precisión si no explicamos sus supuestos. La <a href="https://csrc.nist.gov/pubs/sp/800/30/r1/final">guía NIST SP 800-30 Rev. 1</a>, retomada en el proyecto, complementa esta evaluación estructurada del riesgo.</p>
+
+					<p>Este proyecto me hizo ver la trazabilidad como una herramienta de operación: relacionar activo, dueño, servicio, configuración aprobada y cambio ayuda a responder quién debe decidir y qué revisar antes de modificar algo. Nuestro trabajo fue una propuesta para una organización simulada; implementarla exigiría comprobar el inventario, acordar responsabilidades y contrastar los riesgos con la operación real.</p>
+
+					<h2>Evaluar para decidir qué hacer</h2>
+
+					<p>El <a href="https://www.oreilly.com/library/view/risk-assessment-for/9781849281232/Text/ch015.xhtml">capítulo 10 de Calder y Watkins</a> sitúa la selección de controles después de la evaluación. Presenta decisiones de aceptación, evitación, reducción o transferencia del riesgo según la tolerancia de la organización. Mi reflexión es que la matriz debe desembocar en una decisión explícita. Una etiqueta de riesgo alto, por sí sola, todavía no explica qué vamos a hacer ni quién tiene autoridad para decidirlo.</p>
+
+					<p>Por ejemplo, en el escenario ficticio de VHT, antes de proponer un cambio sobre un componente que sostiene consultas clínicas, revisaría sus dependencias, la continuidad disponible y la posibilidad de revertirlo. Este ejemplo me obliga a considerar el riesgo de la intervención y el de mantener la situación actual. Si se acepta temporalmente una exposición, dejaría documentados el motivo, el responsable y una fecha de revisión. Es una aplicación que propongo a partir de la lectura y del proyecto.</p>
+
+					<p>También encuentro un límite a la tentación de resolver todo con tecnología. En el <a href="https://www.oreilly.com/library/view/rethinking-information-technology/9781637420157/text/chapter07.xhtml">capítulo 7, Boerger</a> destaca una base de equipo, capacitación, políticas y procedimientos para sostener ITAM. Lo conecto con mi ejercicio: una herramienta puede guardar la custodia de una laptop, pero necesita personas que registren la devolución y reglas para corregir una ficha. La confiabilidad del dato se construye durante todo su ciclo de vida.</p>
+
+					<h2>Lo que quiero llevar a mi trabajo</h2>
+
+					<p>En mi ámbito de infraestructura y SRE, aplicaría estos aprendizajes empezando por un servicio crítico: identificar sus dependencias, asignar responsables y contrastar lo declarado con lo desplegado. Después relacionaría los hallazgos con cambios concretos y una verificación posterior. Un componente con severidad técnica alta puede requerir una atención distinta según su exposición y sus controles; un componente aparentemente secundario puede ser esencial para recuperar el servicio.</p>
+
+					<p>También cambiaría qué indicadores considero suficientes. A la cantidad de activos o alertas añadiría preguntas sobre registros sin dueño, información sin verificar y correcciones pendientes de revalidación. Mi reto sería mantener esa disciplina cuando la presión operativa empuje a resolver rápido y documentar después. Automatizar el descubrimiento ayuda, pero todavía hace falta acordar quién mantiene la información y cómo se resuelven las discrepancias.</p>
+
+					<p>Escribir esta entrada me permitió unir la teoría con dos actividades centrales del módulo. Hobbs me llevó a relacionar visibilidad y disciplina operativa; Boerger, a cuestionar la calidad de los datos y cómo sostenerla; Calder y Watkins, a conectar activos con valoración y tratamiento del riesgo. En Snipe-IT y en VHT pude poner esas preguntas a prueba. Quiero conservar la reflexión como hábito después de un cambio o incidente: registrar qué suponía, qué comprobé y qué decisión haría diferente. Ese es el criterio que me interesa desarrollar durante la maestría.</p>
+
+					<section class="references" aria-labelledby="references-title">
+						<h2 id="references-title">Fuentes y actividades retomadas</h2>
+						<p>Esta reflexión recupera mi reporte de Herramienta 1: Snipe-IT (27 de septiembre de 2026) y el proyecto en equipo <cite>Programa de gestión de activos y configuraciones: Vanguard Health Technologies</cite> (4 de octubre de 2026). Los ejemplos de VHT y los activos de Snipe-IT corresponden a ejercicios simulados.</p>
+						<p>Las actividades de lectura de Canvas asignan Hobbs, capítulos 1 y 8, y Boerger, capítulos 1 y 2, en la semana 1; Hobbs, capítulo 2, y Boerger, capítulos 3 y 7, en la semana 2; y Calder y Watkins, capítulos 6, 8, 9 y 10, en la semana 3. Para esta entrada se contrastó esa selección con las vistas previas disponibles en O’Reilly; el acceso al texto completo depende de la suscripción o del acceso institucional.</p>
+						<ul>
+							<li>Hobbs, M. (2011). <a href="https://www.oreilly.com/library/view/it-asset-management/9781849282949/"><cite>IT Asset Management: A Pocket Survival Guide</cite></a> (caps. 1, 2 y 8). IT Governance Publishing.</li>
+							<li>Boerger, J. L. (2021). <a href="https://www.oreilly.com/library/view/rethinking-information-technology/9781637420157/"><cite>Rethinking Information Technology Asset Management</cite></a> (caps. 1, 2, 3 y 7). Business Expert Press.</li>
+							<li>Calder, A., y Watkins, S. (2007). <a href="https://www.oreilly.com/library/view/risk-assessment-for/9781849281232/"><cite>Risk Assessment for Asset Owners</cite></a> (caps. 6, 8, 9 y 10). IT Governance Publishing.</li>
+							<li>Center for Internet Security. (s. f.). <a href="https://www.cisecurity.org/controls/inventory-and-control-of-enterprise-assets"><cite>CIS Critical Security Control 1: Inventory and Control of Enterprise Assets</cite></a>.</li>
+							<li>Snipe-IT. (s. f.). <a href="https://snipe-it.readme.io/docs/managing-assets"><cite>Managing Assets</cite></a>.</li>
+							<li>Joint Task Force Transformation Initiative. (2012). <a href="https://doi.org/10.6028/NIST.SP.800-30r1"><cite>Guide for Conducting Risk Assessments</cite></a> (NIST SP 800-30 Rev. 1).</li>
+						</ul>
+					</section>
+
+					<div class="article-end" aria-hidden="true"><span></span><span></span><span></span></div>
+				</div>
+			</article>
+		</main>
+
+		<footer class="site-footer shell">
+			<p>© 2026 Rolando Valenzuela</p>
+			<a href={base}>Volver al inicio ↑</a>
+		</footer>
+	</body>
+</html>
+
+<style>
+	.article-header h1 { font-size: clamp(3.2rem, 8vw, 6.4rem); line-height: 0.98; }
+	.references { padding-top: 1rem; border-top: 1px solid var(--line); margin-top: 4rem; }
+	.references h2 { margin-top: 1.5rem; }
+	.references p, .references li { font-size: 1rem; line-height: 1.65; }
+	.references ul { padding-left: 1.2rem; }
+	.references li { margin-bottom: 1rem; }
+</style>

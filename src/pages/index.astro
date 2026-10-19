@@ -30,8 +30,16 @@ const base = import.meta.env.BASE_URL;
 			<section class="posts" aria-labelledby="posts-title">
 				<div class="section-heading">
 					<h2 id="posts-title">Entradas</h2>
-					<span>01</span>
+					<span>02</span>
 				</div>
+				<a class="post-card" href={`${base}blog/gestion-activos-riesgo/`}>
+					<div>
+						<p class="post-meta"><time datetime="2026-10-18">18 oct 2026</time> · 10 min</p>
+						<h3>Saber qué tenemos, entender qué arriesgamos</h3>
+						<p>Las lecturas del Módulo 1, Snipe-IT y un caso de telemedicina: de conocer los activos a decidir cómo tratar el riesgo.</p>
+					</div>
+					<span class="arrow" aria-hidden="true">↗</span>
+				</a>
 				<a class="post-card" href={`${base}blog/hola-mundo/`}>
 					<div>
 						<p class="post-meta"><time datetime="2026-09-20">20 sep 2026</time> · 4 min</p>
