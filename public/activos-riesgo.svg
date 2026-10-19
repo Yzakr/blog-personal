@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="850" viewBox="0 0 760 850" role="img" aria-labelledby="title desc">
+  <title id="title">Del activo a una decisión de riesgo</title>
+  <desc id="desc">Identificar qué existe, relacionarlo con un responsable y un servicio, valorar el impacto y decidir un tratamiento que se pueda verificar. El proceso se revisa cuando cambian los activos o su contexto.</desc>
+  <rect width="760" height="850" fill="#eae5da"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#15191b">
+    <text x="48" y="58" font-size="17" letter-spacing="3" fill="#164fdb">GESTIÓN DE ACTIVOS + RIESGO</text>
+    <text x="48" y="116" font-size="43" letter-spacing="-1.5">Del registro a la decisión.</text>
+    <g fill="#f4f0e8" stroke="#c9c3b8">
+      <rect x="48" y="155" width="664" height="120" rx="8"/>
+      <rect x="48" y="307" width="664" height="120" rx="8"/>
+      <rect x="48" y="459" width="664" height="120" rx="8"/>
+      <rect x="48" y="611" width="664" height="120" rx="8"/>
+    </g>
+    <g font-size="39" fill="#ff4d24">
+      <text x="74" y="227">01</text><text x="74" y="379">02</text>
+      <text x="74" y="531">03</text><text x="74" y="683">04</text>
+    </g>
+    <g font-size="31" font-weight="700">
+      <text x="152" y="203">Identificar</text><text x="152" y="355">Relacionar</text>
+      <text x="152" y="507">Valorar</text><text x="152" y="659">Decidir y verificar</text>
+    </g>
+    <g font-size="25" fill="#5f625e">
+      <text x="152" y="246">¿Qué existe y en qué estado está?</text>
+      <text x="152" y="398">¿Quién responde? ¿Qué servicio apoya?</text>
+      <text x="152" y="550">¿Qué impacto tendría perderlo?</text>
+      <text x="152" y="702">¿Qué haremos? ¿Cómo lo comprobaremos?</text>
+    </g>
+    <g stroke="#164fdb" stroke-width="3" fill="none">
+      <path d="M380 281v18m-6-6 6 6 6-6"/>
+      <path d="M380 433v18m-6-6 6 6 6-6"/>
+      <path d="M380 585v18m-6-6 6 6 6-6"/>
+    </g>
+    <text x="48" y="787" font-size="26" fill="#164fdb">Revisar cuando cambie el activo o su contexto.</text>
+    <text x="48" y="823" font-size="17" fill="#5f625e">Síntesis visual original de esta entrada · Módulo 1</text>
+  </g>
+</svg>

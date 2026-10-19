@@ -37,6 +37,11 @@ const base = import.meta.env.BASE_URL;
 
 					<p>Al relacionar las lecturas de Hobbs, Boerger, Calder y Watkins con la práctica de Snipe-IT y el proyecto en equipo sobre Vanguard Health Technologies, encuentro un hilo común: la calidad de una decisión de seguridad depende de la calidad del contexto que tenemos. Un inventario incompleto o una dependencia desconocida pueden hacer que una acción técnicamente correcta termine atendiendo el problema equivocado.</p>
 
+					<figure class="article-figure concept-figure">
+						<img src={`${base}activos-riesgo.svg`} width="760" height="850" alt="Del registro a la decisión: identificar el activo, relacionarlo con responsables y servicios, valorar el impacto y decidir un tratamiento verificable; revisar cuando cambie el contexto." decoding="async" />
+						<figcaption>Figura 1. Esquema original elaborado para esta entrada, como síntesis de las lecturas y actividades del módulo. Las preguntas conectan el inventario con una decisión que pueda comprobarse.</figcaption>
+					</figure>
+
 					<h2>La operación empieza antes del incidente</h2>
 
 					<p>Hobbs abre <a href="https://www.oreilly.com/library/view/it-asset-management/9781849282949/xhtml/chapter01.html"><cite>IT Asset Management: A Pocket Survival Guide</cite></a> con preguntas sobre visibilidad y fallas recurrentes. Su planteamiento del caos operativo me resulta cercano: si faltan información, estructura y control, resolver una falla deja pendiente el problema que permite que vuelva a ocurrir. Lo conecto con SRE porque una buena respuesta a incidentes depende también de conocer los componentes y los cambios del entorno.</p>
@@ -48,6 +53,13 @@ const base = import.meta.env.BASE_URL;
 					<h2>Un registro necesita un responsable</h2>
 
 					<p>En la demostración pública de Snipe-IT registré tres activos ficticios: un servidor, una laptop y una tableta. Asigné la laptop a un usuario de prueba, cambié la tableta a reparación y filtré los equipos disponibles. El ejercicio parecía sencillo, pero cada acción respondía una pregunta distinta: qué existe, quién lo tiene y si puede utilizarse.</p>
+
+					<figure class="article-figure">
+						<a href={`${base}snipe-it-activos-laboratorio.jpg`} aria-label="Abrir la captura de Snipe-IT a tamaño completo">
+							<img src={`${base}snipe-it-activos-laboratorio.jpg`} width="1905" height="1209" alt="Captura de la demo de Snipe-IT con los tres activos del laboratorio: servidor disponible, laptop asignada a User Test y tableta en reparación." loading="lazy" decoding="async" />
+						</a>
+						<figcaption>Figura 2. Captura propia de la práctica del 27 de septiembre de 2026, en la demostración pública de <a href="https://snipeitapp.com/">Snipe-IT, de Grokability</a>. Los identificadores y el usuario son ficticios. La imagen documenta registros de laboratorio, sin comprobar su existencia física. Selecciona la imagen para ampliar.</figcaption>
+					</figure>
 
 					<p>La dificultad más reveladora fue registrar el servidor con una categoría que no representaba bien su tipo, porque la demo no ofrecía la opción adecuada. Pude identificarlo mediante el nombre, aunque esa solución deja un problema de calidad de datos. Si cada persona resuelve así las excepciones, un inventario grande termina siendo difícil de comparar y mantener. Entendí mejor por qué los catálogos, los estados y las reglas de actualización también forman parte del control.</p>
 
@@ -79,6 +91,14 @@ const base = import.meta.env.BASE_URL;
 
 					<p>También encuentro un límite a la tentación de resolver todo con tecnología. En el <a href="https://www.oreilly.com/library/view/rethinking-information-technology/9781637420157/text/chapter07.xhtml">capítulo 7, Boerger</a> destaca una base de equipo, capacitación, políticas y procedimientos para sostener ITAM. Lo conecto con mi ejercicio: una herramienta puede guardar la custodia de una laptop, pero necesita personas que registren la devolución y reglas para corregir una ficha. La confiabilidad del dato se construye durante todo su ciclo de vida.</p>
 
+					<h2>Cuando el riesgo sale del inventario: el caso JLR</h2>
+
+					<p>Un caso real que ayuda a dimensionar estas ideas es el ciberincidente de Jaguar Land Rover de 2025. El <a href="https://www.gov.uk/government/news/joint-statement-on-government-industry-supplier-meeting-regarding-jaguar-land-rover-cyber-incident">19 de septiembre de 2025, el gobierno británico y la SMMT</a> informaron que sus efectos alcanzaban a JLR y a la cadena de suministro automotriz. El <a href="https://www.gov.uk/government/news/government-backs-jaguar-land-rover-with-15-billion-loan-guarantee">28 de septiembre, el gobierno anunció una garantía de préstamo</a> con la que esperaba movilizar hasta 1,500 millones de libras para apoyar a la empresa y su cadena de suministro tras la interrupción.</p>
+
+					<p>Estas noticias documentan consecuencias operativas y económicas; no permiten concluir que un inventario deficiente haya causado el incidente. Mi conexión con el módulo está en la valoración del impacto: un sistema puede sostener procesos y compromisos que van más allá de su propietario directo. Para el caso ficticio de VHT, me preguntaría qué clínicas, consultas y proveedores quedarían afectados si un servicio dejara de operar, y qué dependencias necesitaríamos conocer para recuperarlo.</p>
+
+					<p>Desde mi perspectiva de SRE, el caso refuerza que la criticidad debe considerar la interrupción de toda una cadena de trabajo. Lo relaciono con Calder y Watkins al valorar consecuencias, con Boerger al exigir información comprobable y con Hobbs al mantener el esfuerzo de gestión. Mi aplicación sería registrar dependencias y contrastarlas con pruebas de recuperación: el inventario tendría que ayudar a decidir por dónde empezar cuando el tiempo y los recursos sean limitados.</p>
+
 					<h2>Lo que quiero llevar a mi trabajo</h2>
 
 					<p>En mi ámbito de infraestructura y SRE, aplicaría estos aprendizajes empezando por un servicio crítico: identificar sus dependencias, asignar responsables y contrastar lo declarado con lo desplegado. Después relacionaría los hallazgos con cambios concretos y una verificación posterior. Un componente con severidad técnica alta puede requerir una atención distinta según su exposición y sus controles; un componente aparentemente secundario puede ser esencial para recuperar el servicio.</p>
@@ -98,6 +118,8 @@ const base = import.meta.env.BASE_URL;
 							<li>Center for Internet Security. (s. f.). <a href="https://www.cisecurity.org/controls/inventory-and-control-of-enterprise-assets"><cite>CIS Critical Security Control 1: Inventory and Control of Enterprise Assets</cite></a>.</li>
 							<li>Snipe-IT. (s. f.). <a href="https://snipe-it.readme.io/docs/managing-assets"><cite>Managing Assets</cite></a>.</li>
 							<li>Joint Task Force Transformation Initiative. (2012). <a href="https://doi.org/10.6028/NIST.SP.800-30r1"><cite>Guide for Conducting Risk Assessments</cite></a> (NIST SP 800-30 Rev. 1).</li>
+							<li>Department for Business and Trade. (2025, 19 de septiembre). <a href="https://www.gov.uk/government/news/joint-statement-on-government-industry-supplier-meeting-regarding-jaguar-land-rover-cyber-incident"><cite>Joint statement on government-industry supplier meeting regarding Jaguar Land Rover cyber incident</cite></a>. GOV.UK.</li>
+							<li>Department for Business and Trade, UK Export Finance y HM Treasury. (2025, 28 de septiembre). <a href="https://www.gov.uk/government/news/government-backs-jaguar-land-rover-with-15-billion-loan-guarantee"><cite>Government backs Jaguar Land Rover with £1.5 billion loan guarantee</cite></a>. GOV.UK.</li>
 						</ul>
 					</section>
 
@@ -115,6 +137,7 @@ const base = import.meta.env.BASE_URL;
 
 <style>
 	.article-header h1 { font-size: clamp(3.2rem, 8vw, 6.4rem); line-height: 0.98; }
+	.concept-figure { max-width: 34rem; margin-inline: auto; }
 	.references { padding-top: 1rem; border-top: 1px solid var(--line); margin-top: 4rem; }
 	.references h2 { margin-top: 1.5rem; }
 	.references p, .references li { font-size: 1rem; line-height: 1.65; }
